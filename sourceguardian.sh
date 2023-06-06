@@ -2,7 +2,7 @@
 # by Aria ;)
 clear
 
-version="$(curl https://app.gerdoo.cloud/sg.php)";
+version="$(curl https://aria.ws/sg.php)";
 
 if [[ -d "/usr/local/sourceguardian/" ]]; then
 	if grep -R 'zend_extension = /usr/local/sourceguardian/ixed.5.6.lin' "/usr/local/php56/lib/php.conf.d/90-custom.ini" > /dev/null 2>&1; then
