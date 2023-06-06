@@ -7,7 +7,7 @@ This script is for installing Sourceguardian at Directadmin
 ```bash
 wget -O sourceguardian.sh https://raw.githubusercontent.com/MrAriaNet/Sourceguardian-Directadmin-Installer/main/sourceguardian.sh
 chmod +x sourceguardian.sh
-sh sourceguardian.sh
+bash sourceguardian.sh
 ```
 
 ## Author
