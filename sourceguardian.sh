@@ -4,13 +4,11 @@ clear
 
 version="$(curl https://aria.ws/sg.php)";
 
-# added by @CosmicNames
-do_update_ini()
-{
+do_update_ini() {
     INI_DIR="/usr/local/${1}/lib/php.conf.d";
     INI_FILE="${INI_DIR}/99-custom.ini";
     [ -f "${INI_FILE}" ] || INI_FILE="/usr/local/${1}/lib/php.conf.d/90-custom.ini";
-    ROW="extension=${2}";
+    ROW="zend_extension = /usr/local/sourceguardian/${2}";
 
     if [[ -f "${INI_FILE}" ]]; then
 		grep -m1 -q "^${ROW}" "${INI_FILE}" >/dev/null 2>&1 || echo "${ROW}" >> ${INI_FILE};
@@ -27,12 +25,12 @@ do_update_ini()
 
 if [[ -d "/usr/local/sourceguardian/" ]]; then
 
-	do_update_ini 56 ixed.5.6.lin 5.6
-	do_update_ini 72 ixed.7.2.lin 7.2
-	do_update_ini 73 ixed.7.3.lin 7.3
-	do_update_ini 74 ixed.7.4.lin 7.4
-	do_update_ini 80 ixed.8.0.lin 8.0
-	do_update_ini 81 ixed.8.1.lin 8.1
+	do_update_ini php56 ixed.5.6.lin 5.6
+	do_update_ini php72 ixed.7.2.lin 7.2
+	do_update_ini php73 ixed.7.3.lin 7.3
+	do_update_ini php74 ixed.7.4.lin 7.4
+	do_update_ini php80 ixed.8.0.lin 8.0
+	do_update_ini php81 ixed.8.1.lin 8.1
 
 	if grep -q $version "/usr/local/sourceguardian/version"; then
 		echo -e "\nSourceguardian is updated.\n";
@@ -83,12 +81,12 @@ else
 
 	echo -e "Sourceguardian install started.\n";
 
-	do_update_ini 56 ixed.5.6.lin 5.6
-	do_update_ini 72 ixed.7.2.lin 7.2
-	do_update_ini 72 ixed.7.3.lin 7.3
-	do_update_ini 74 ixed.7.4.lin 7.4
-	do_update_ini 80 ixed.8.0.lin 8.0
-	do_update_ini 81 ixed.8.1.lin 8.1
+	do_update_ini php56 ixed.5.6.lin 5.6
+	do_update_ini php72 ixed.7.2.lin 7.2
+	do_update_ini php73 ixed.7.3.lin 7.3
+	do_update_ini php74 ixed.7.4.lin 7.4
+	do_update_ini php80 ixed.8.0.lin 8.0
+	do_update_ini php81 ixed.8.1.lin 8.1
 
 	echo -e "\nSourceguardian were installed.\n";
 fi
