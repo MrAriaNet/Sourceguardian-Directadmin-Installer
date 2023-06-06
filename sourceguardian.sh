@@ -4,7 +4,7 @@ clear
 
 version="$(curl https://aria.ws/sg.php)";
 
-// added by @CosmicNames
+# added by @CosmicNames
 do_update_ini()
 {
     INI_DIR="/usr/local/${1}/lib/php.conf.d";
