@@ -29,7 +29,7 @@ if [[ -d "/usr/local/sourceguardian/" ]]; then
 
 	do_update_ini 56 ixed.5.6.lin 5.6
 	do_update_ini 72 ixed.7.2.lin 7.2
-	do_update_ini 72 ixed.7.3.lin 7.3
+	do_update_ini 73 ixed.7.3.lin 7.3
 	do_update_ini 74 ixed.7.4.lin 7.4
 	do_update_ini 80 ixed.8.0.lin 8.0
 	do_update_ini 81 ixed.8.1.lin 8.1
