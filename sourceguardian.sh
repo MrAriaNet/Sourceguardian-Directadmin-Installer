@@ -12,7 +12,7 @@ do_update_ini() {
 
     if [[ -f "${INI_FILE}" ]]; then
 		grep -m1 -q "^${ROW}" "${INI_FILE}" >/dev/null 2>&1 || echo "${ROW}" >> ${INI_FILE};
-		echo "Sourceguardian is installed for PHP ${3}"
+		echo "Sourceguardian was already installed in PHP ${3}"
 	else
 		# Create the file if the directory exists
 		if [[ -d "$INI_DIR" ]]; then
