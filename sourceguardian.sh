@@ -26,18 +26,14 @@ do_update_ini()
 }
 
 if [[ -d "/usr/local/sourceguardian/" ]]; then
-	if grep -R 'zend_extension = /usr/local/sourceguardian/ixed.5.6.lin' "/usr/local/php56/lib/php.conf.d/90-custom.ini" > /dev/null 2>&1; then
-		echo "Sourceguardian was already installed in PHP 5.6"
-	fi
-	if grep -R 'zend_extension = /usr/local/sourceguardian/ixed.7.2.lin' "/usr/local/php72/lib/php.conf.d/90-custom.ini" > /dev/null 2>&1; then
-		echo "Sourceguardian was already installed in PHP 7.2"
-	fi
-	if grep -R 'zend_extension = /usr/local/sourceguardian/ixed.7.3.lin' "/usr/local/php73/lib/php.conf.d/90-custom.ini" > /dev/null 2>&1; then
-		echo "Sourceguardian was already installed in PHP 7.3"
-	fi
-	if grep -R 'zend_extension = /usr/local/sourceguardian/ixed.7.4.lin' "/usr/local/php74/lib/php.conf.d/90-custom.ini" > /dev/null 2>&1; then
-		echo "Sourceguardian was already installed in PHP 7.4"
-	fi
+
+	do_update_ini 56 ixed.5.6.lin 5.6
+	do_update_ini 72 ixed.7.2.lin 7.2
+	do_update_ini 72 ixed.7.3.lin 7.3
+	do_update_ini 74 ixed.7.4.lin 7.4
+	do_update_ini 80 ixed.8.0.lin 8.0
+	do_update_ini 81 ixed.8.1.lin 8.1
+
 	if grep -q $version "/usr/local/sourceguardian/version"; then
 		echo -e "\nSourceguardian is updated.\n";
 	else
